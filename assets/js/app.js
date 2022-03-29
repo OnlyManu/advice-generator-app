@@ -11,7 +11,7 @@ function rollDice(){
         }
     }).then(function(data){
         adviceId.innerHTML=`Advice #${data.slip.id}`;
-        adviceText.innerHTML=`“${data.slip.advice}”`;
+        adviceText.innerHTML=`‘‘${data.slip.advice}’’`;
     }).catch(function(error){
         console.error("il y a eu un problème avec la requete: "+error.message);
     });
