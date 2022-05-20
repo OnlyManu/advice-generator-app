@@ -1,13 +1,15 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 @font-face {
     font-family: "Manrope";
     src: url(../fonts/Manrope-VariableFont_wght.ttf);
 }
-html, body{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-body{
+:root{
     /*primary color*/
     --var-light-cyan: hsl(193, 38%, 86%);
     --var-neon-green: hsl(150, 100%, 66%);
@@ -15,7 +17,17 @@ body{
     --var-grayish-blue: hsl(217, 19%, 38%);
     --var-dark-grayish-blue: hsl(217, 19%, 24%);
     --var-dark-blue: hsl(218, 23%, 16%);
-
+}
+*, *::after, *::before{
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+}
+html{
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+body{
+    display: -ms-grid;
     display: grid;
     place-items: center;
     width: 100vw;
@@ -23,18 +35,26 @@ body{
     font-family: Manrope;
     font-size: 28px;
     background-color: var(--var-dark-blue);
+    padding: 0;
+    margin: 0;
 }
 .container{
     position: relative;
     background-color: var(--var-dark-grayish-blue);
-    box-shadow: 0px 0px 2px var(--var-grayish-blue);
+    -webkit-box-shadow: 0px 0px 2px var(--var-grayish-blue);
+            box-shadow: 0px 0px 2px var(--var-grayish-blue);
     border-radius: 1rem;
     padding-bottom: 2rem;
     width: 40%;
 }
 .advice{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
     padding: 2rem;
     gap: 2rem;
     font-size: 1.7rem;
@@ -55,19 +75,24 @@ body{
     position: absolute;
     bottom: 0;
     left: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-color: var(--var-neon-green);
     padding: 1.1rem;
     border-radius: 50%;
     border-style: none;
-    transform: translateY(50%) translateX(-50%);
+    -webkit-transform: translateY(50%) translateX(-50%);
+        -ms-transform: translateY(50%) translateX(-50%);
+            transform: translateY(50%) translateX(-50%);
 }
 #dice>img{
     width: 100%;
     height: auto;
 }
 #dice:hover{
-    box-shadow:0px 0px 25px hsl(150, 100%, 66%);
+    -webkit-box-shadow:0px 0px 25px hsl(150, 100%, 66%);
+            box-shadow:0px 0px 25px hsl(150, 100%, 66%);
 }
 
 @media screen and (max-width: 650px) {
